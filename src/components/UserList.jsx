@@ -2,13 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../api";
 
-const UserList = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    getUsers().then((response) => setUsers(response.data));
-  }, []);
-
+const UserList = ({ users }) => {
   return (
     <div>
       <h2>Users</h2>

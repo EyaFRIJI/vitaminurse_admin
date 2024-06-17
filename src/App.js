@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Allergies from "./pages/Allergies";
@@ -20,14 +19,19 @@ const App = () => {
             <Link to="/users">Users</Link>
           </li>
           <li>
-            <Link to="/users">Produits</Link>
+            <a
+              href="https://console.firebase.google.com/project/vitaminurse-app/firestore/databases/-default-/data/~2FProduits~2F0000040144405?utm_campaign=welcome_2021_CTA_A&utm_medium=email&utm_source=welcome"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Produits
+            </a>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/allergies" element={<Allergies />} />
         <Route path="/maladies" element={<Maladies />} />
-        <Route path="/users" element={<Users />} />
         <Route path="/users" element={<Users />} />
       </Routes>
     </Router>

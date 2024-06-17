@@ -1,20 +1,34 @@
 // src/components/AllergieList.js
 import React, { useEffect, useState } from "react";
-import { getAllergies } from "../api";
+import { deleteAllergie } from "../api";
 
-const AllergieList = () => {
-  const [allergies, setAllergies] = useState([]);
-
-  useEffect(() => {
-    getAllergies().then((response) => setAllergies(response.data));
-  }, []);
-
+const AllergieList = ({ allergies, onSuccess }) => {
+  const deleteAction = (id) => {
+    deleteAllergie(id).then((data) => {
+      onSuccess();
+    });
+  };
   return (
     <div>
       <h2>Allergies</h2>
       <ul>
         {allergies.map((allergie) => (
-          <li key={allergie._id}>{allergie.name}</li>
+          <li
+            onClick={() => {
+              console.log(`Clicked on ${allergie.name}`);
+            }}
+            style={{ marginBottom: "10px", cursor: "pointer" }}
+            key={allergie._id}
+          >
+            {allergie.name}{" "}
+            <button
+              onClick={() => {
+                deleteAction(allergie._id);
+              }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>

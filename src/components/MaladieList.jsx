@@ -2,13 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getMaladies } from "../api";
 
-const MaladieList = () => {
-  const [maladies, setMaladies] = useState([]);
-
-  useEffect(() => {
-    getMaladies().then((response) => setMaladies(response.data));
-  }, []);
-
+const MaladieList = ({ maladies }) => {
   return (
     <div>
       <h2>Maladies</h2>

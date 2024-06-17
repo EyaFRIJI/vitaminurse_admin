@@ -7,6 +7,8 @@ const API_URL = "http://localhost:2000"; // Update this if your backend is runni
 export const getAllergies = () => axios.get(`${API_URL}/allergie`);
 export const createAllergie = (allergie) =>
   axios.post(`${API_URL}/allergie`, allergie);
+export const deleteAllergie = (id) =>
+  axios.delete(`${API_URL}/allergie`, { data: { id } });
 
 // Maladie API
 export const getMaladies = () => axios.get(`${API_URL}/maladie`);

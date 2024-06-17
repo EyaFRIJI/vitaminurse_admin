@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { createMaladie } from "../api";
 
-const MaladieForm = () => {
+const MaladieForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     name: "",
     ocr: "",
@@ -25,6 +25,7 @@ const MaladieForm = () => {
         ocr: "",
         max: 0,
       });
+      onSuccess();
     });
   };
 

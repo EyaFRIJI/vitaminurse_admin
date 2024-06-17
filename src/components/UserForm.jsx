@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { createUser } from "../api";
 
-const UserForm = () => {
+const UserForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -39,6 +39,7 @@ const UserForm = () => {
         mot_passe: "",
         tel: "",
       });
+      onSuccess();
     });
   };
 

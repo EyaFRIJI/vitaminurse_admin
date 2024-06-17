@@ -2,13 +2,14 @@
 import React, { useState } from "react";
 import { createAllergie } from "../api";
 
-const AllergieForm = () => {
+const AllergieForm = ({ onSuccess }) => {
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     createAllergie({ name }).then(() => {
       setName("");
+      onSuccess();
     });
   };
 
