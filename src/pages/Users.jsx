@@ -17,13 +17,9 @@ const Users = () => {
 
   return (
     <div>
-      <h1>Users Page</h1>
-      <UserForm
-        onSuccess={() => {
-          getList();
-        }}
-      />
-      <UserList users={users} />
+      <h1>Add Users</h1>
+      <UserForm onSuccess={() => getList()} />
+      <UserList users={users} onSuccess={() => getList()} />
     </div>
   );
 };

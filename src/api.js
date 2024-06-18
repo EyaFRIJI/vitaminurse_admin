@@ -14,8 +14,11 @@ export const deleteAllergie = (id) =>
 export const getMaladies = () => axios.get(`${API_URL}/maladie`);
 export const createMaladie = (maladie) =>
   axios.post(`${API_URL}/maladie`, maladie);
+export const deleteMaladie = (id) =>
+  axios.delete(`${API_URL}/maladie`, { data: { id } });
 
 // User API
 export const getUsers = () => axios.get(`${API_URL}/user`);
 export const createUser = (user) => axios.post(`${API_URL}/register`, user);
-export const updateUser = (user) => axios.put(`${API_URL}/user`, user);
+export const deleteUser = (id) =>
+  axios.delete(`${API_URL}/user`, { data: { id } });

@@ -17,13 +17,9 @@ const Maladies = () => {
 
   return (
     <div>
-      <h1>Maladies Page</h1>
-      <MaladieForm
-        onSuccess={() => {
-          getList();
-        }}
-      />
-      <MaladieList maladies={maladies} />
+      <h1>Add Maladies</h1>
+      <MaladieForm onSuccess={() => getList()} />
+      <MaladieList maladies={maladies} onSuccess={() => getList()} />
     </div>
   );
 };
