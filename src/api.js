@@ -22,3 +22,5 @@ export const getUsers = () => axios.get(`${API_URL}/user`);
 export const createUser = (user) => axios.post(`${API_URL}/register`, user);
 export const deleteUser = (id) =>
   axios.delete(`${API_URL}/user`, { data: { id } });
+export const adminLogin = (email, mot_passe) =>
+  axios.post(`${API_URL}/adminlogin`, { email, mot_passe });
